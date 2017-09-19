@@ -29,6 +29,8 @@
 
 ### Admin Experience
     - Able to create, update, or delete blog posts
+      - devise
+      - petergate
     - Able to delete user posts
     - Able to approve posts that users submit
       - receive email when user submits post.
