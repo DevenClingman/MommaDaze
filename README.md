@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## MommaDaze Blogging Site
 
-Things you may want to cover:
+### Blog
 
-* Ruby version
+    - title:string
+    - content:text
+    - thumb_image:text
 
-* System dependencies
+### User
+    - Devise
 
-* Configuration
+### Admin
+    - Petergate
+### Post
+    - title:string
+    - description:text
+    - image:text
 
-* Database creation
+### User Experience
+    - Visit webpage and be able to view most recent blogs
+      - includes pagination
+        - kaminari
+      - An about me page which tells about the author of the blog posts
+      - Possibility to Register
+        - Receive welcome email when register
+        - Able to leave posts once they login
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Admin Experience
+    - Able to create, update, or delete blog posts
+    - Able to delete user posts
+    - Able to approve posts that users submit
+      - receive email when user submits post.
