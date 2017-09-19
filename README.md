@@ -4,19 +4,19 @@
 
 ### Blog
 
-    - title:string
-    - content:text
-    - thumb_image:text
+    x title:string
+    x content:text
+    x thumb_image:text
 
 ### User
-    - Devise
+    x Devise
 
 ### Admin
     - Petergate
 ### Post
-    - title:string
-    - description:text
-    - image:text
+    x title:string
+    x description:text
+    x image:text
 
 ### User Experience
     - Visit webpage and be able to view most recent blogs
