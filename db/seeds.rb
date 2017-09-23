@@ -16,4 +16,12 @@ puts "25 blogs created"
   )
 end
 
+1.times do |user|
+  User.create(
+    email: "user@user.com",
+    password: "asdfasdf",
+    name: "Guest User"
+  )
+end
+
 puts "10 posts created"
