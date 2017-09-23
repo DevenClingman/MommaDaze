@@ -1,3 +1,7 @@
 <h1>Pages#home</h1>
-<h2>Welcome, <%= current_user.name unless !current_user%> </h2>
+<% if current_user %>
+  <h2>Welcome, <%= current_user.name %>. </h2>
+<% else %>
+  <h2>Thanks for visiting MommaDaze!</h2>
+<% end %>
 <p>Find me in app/views/pages/home.html.erb</p>
