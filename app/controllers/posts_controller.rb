@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  access all: [:show, :index, :new, :edit, :create, :update, :destroy], site_admin: :all
 
   def index
     @posts = Post.all
   end
 
   def show
+  
   end
 
   def new
@@ -58,5 +60,6 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :description, :image)
   end
+
 
 end
