@@ -8,20 +8,27 @@ end
 
 puts "25 blogs created"
 
-10.times do |post|
-  Post.create!(
-    title: "Post #{post}",
-    description: "perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit",
-    image: "http://placehold.it/350X150"
-  )
-end
-
-1.times do |user|
+5.times do |user|
   User.create(
-    email: "user@user.com",
+    email: "user#{user}@user.com",
     password: "asdfasdf",
     name: "Guest User"
   )
 end
+
+puts "5 users created"
+
+arr = [1,2,3,4]
+
+10.times do |post|
+  Post.create!(
+    title: "Post #{post}",
+    description: "perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit",
+    image: "http://placehold.it/350X150",
+    user_id: arr.sample
+  )
+end
+
+
 
 puts "10 posts created"
