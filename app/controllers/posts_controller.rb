@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :users_post?]
-
+  access all: [:show, :index, :destroy], site_admin: :all
 
   def index
     @posts = Post.all
@@ -32,24 +32,19 @@ class PostsController < ApplicationController
   end
 
   def update
-    if users_post?
-      byebug
-      respond_to do |format|
-        if @post.update(post_params)
-          format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-          format.json { render :show, status: :ok, location: @post }
-        else
-          format.html { render :edit }
-          format.json { render json: @post.errors, status: :unprocessable_entity }
-        end
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.json { render :show, status: :ok, location: @post }
+      else
+        format.html { render :edit }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
-    else
-      redirect_to posts_url, notice: 'Access Denied'
-    end 
+    end
   end 
 
   def destroy
-    if users_post?
+    if is_admin? || users_post? 
       @post.destroy
       respond_to do |format|
         format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
@@ -72,5 +67,9 @@ class PostsController < ApplicationController
 
   def users_post? 
     current_user.id == @post.user_id
+  end
+
+  def is_admin?
+    current_user.roles.first == :site_admin
   end
 end

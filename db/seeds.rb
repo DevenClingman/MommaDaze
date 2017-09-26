@@ -16,6 +16,15 @@ puts "25 blogs created"
   )
 end
 
+1.times do |admin|
+  User.create(
+    email: "bree@gmail.com",
+    password: "asdfasdf",
+    name: "Bree Clingman",
+    roles: "site_admin"
+  )
+end
+
 puts "5 users created"
 
 arr = [1,2,3,4]
