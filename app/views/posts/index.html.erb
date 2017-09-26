@@ -1,7 +1,12 @@
 <h1>Posts</h1>
 
-<% @posts.each do |posts| %>
-  <p><%= posts.title %></p>
-  <p><%= posts.description %></p>
-  <p><%= image_tag posts.image %></p>
+<% @posts.each do |post| %>
+  <p><%= post.title %></p>
+  <p><%= post.description %></p>
+  <p><%= image_tag post.image %></p>
+  <p><%= link_to "Show", post %></p>
+  <p><%= link_to "Edit", edit_post_path(post) %></p>
+  <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p> 
 <% end %>
+
+<%= link_to "New", new_post_path %>
