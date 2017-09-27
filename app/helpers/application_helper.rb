@@ -8,6 +8,10 @@ module ApplicationHelper
       link_to "Logout", destroy_user_session_path, method: :delete
     end 
   end
+
+  def copyright_generator
+    ClingmanViewTool::Renderer.copyright 'Jordan Hudgens', 'All rights reserved'
+  end
 end
 
 
