@@ -8,13 +8,17 @@ end
 
 puts "25 blogs created"
 
+name_array = ["Deven Clingman", "Jana Clingman", "Breanne Vogl", "Chad Vogl"]
+
 5.times do |user|
   User.create(
     email: "user#{user}@user.com",
     password: "asdfasdf",
-    name: "Guest User"
+    name: name_array.sample
   )
 end
+
+puts "5 users created"
 
 1.times do |admin|
   User.create(
@@ -25,7 +29,7 @@ end
   )
 end
 
-puts "5 users created"
+puts "1 Admin created"
 
 arr = [1,2,3,4]
 
