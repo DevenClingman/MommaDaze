@@ -1,13 +1,32 @@
-<h1>Posts</h1>
-
-<% @posts.each do |post| %>
-  <p><%= post.title %></p>
-  <p><%= post.description %></p>
-  <p><%= image_tag post.image %></p>
-  <p><%= link_to "Show", post %></p>
-  <p><%= link_to "Edit", edit_post_path(post) %></p>
-  <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p> 
-  <p>Shared by <%= post.user.name %></p>
-<% end %>
-
 <%= link_to "New", new_post_path %>
+
+<div class="container">
+  
+  <h1 class="header-title">Posts</h1>
+  <p id="notice"><%= notice %></p>
+  <div class="row"><div class="col m3"></div>
+    <div class="col s12 m7">
+      <div class="row">
+        <div class="card">
+          <% @posts.each do |post| %>
+            <div class="card-image">
+              <%= image_tag post.image %>
+              <span class="card-title"><%= post.title %></span>
+            </div>
+            <div class="card-content">
+              <div>
+                Shared by <%= post.user.name %>
+                <br><br>
+              </div>
+              <%= post.description.slice(0, 200) %>
+            </div>
+            <div class="card-action">
+              <%= link_to 'View Post', post %>
+            </div>
+            <br><br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

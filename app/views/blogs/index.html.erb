@@ -1,19 +1,33 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Blogs</h1>
-    <% @blogs.each do |blog| %>
-     
-       <p><%= blog.title %></p>
-       <p><%= blog.content %></p>
-       <p><%= image_tag blog.thumb_image %></p>
-       <p><%= link_to 'Show', blog %></p>
-       <p><%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin)%></p>
-       <p><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)%></p>
-      
-    <% end %>
+<div class="container">
+  
+  <h1 class="header-title">Blogs</h1>
+  <h5 class="header-title"><%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %></h5>
+  <p id="notice"><%= notice %></p>
+  <div class="row"><div class="col m3"></div>
+    <div class="col s12 m7">
+      <div class="row">
+        <div class="card">
+          <% @blogs.each do |blog| %>
+            <div class="card-image">
+              <%= image_tag blog.thumb_image %>
+              <span class="card-title"><%= blog.title %></span>
+            </div>
+            <div class="card-content">
+              <%= blog.content.slice(0, 200) %>
+            </div>
+            <div class="card-action">
+              <%= link_to 'Keep reading...', blog %>
+            </div>
+            <br><br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+    
+  
 
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
+  
