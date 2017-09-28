@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="">
     <%= form.label :title %>
     <%= form.text_field :title, id: :blog_title %>
   </div>
 
-  <div class="field">
+  <div>
     <%= form.label :content %>
     <%= form.text_area :content, id: :blog_content %>
   </div>
-
-  <div class="field">
+    
+  <div class="">
     <%= form.label :thumb_image %>
     <%= form.text_area :thumb_image, id: :blog_thumb_image %>
   </div>
 
-  <div class="actions">
+  <div class="waves-effect waves-light btn">
     <%= form.submit %>
   </div>
 <% end %>
