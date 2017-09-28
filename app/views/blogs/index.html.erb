@@ -9,18 +9,21 @@
       <div class="row">
         <div class="card">
           <% @blogs.each do |blog| %>
+          <div>
+            <span class="card-title"><%= blog.title %></span>
+          </div>
             <div class="card-image">
               <%= image_tag blog.thumb_image %>
-              <span class="card-title"><%= blog.title %></span>
             </div>
             <div class="card-content">
-              <%= blog.content.slice(0, 200) %>
+              <%= blog.content.slice(0, 200) %>...
             </div>
             <div class="card-action">
               <%= link_to 'Keep reading...', blog %>
             </div>
             <br><br>
             <%= link_to "Edit Blog", edit_blog_path(blog) %>
+            <div><hr></div>
           <% end %>
         </div>
       </div>
