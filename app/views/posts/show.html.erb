@@ -1,19 +1,16 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>
+    <%= @post.title %>
+  </h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+  <p>
+    <%= image_tag @post.image, width: '55%'%>
+  </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.description %>
-</p>
-
-<p>
-  <strong>Thumb image:</strong>
-  <%= @post.image %>
-</p>
-
+  <h4>
+    <%= @post.description %> and this and that and also this other thing that was really cool.
+  </h4>
+</div>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
