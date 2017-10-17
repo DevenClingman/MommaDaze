@@ -12,6 +12,12 @@ module ApplicationHelper
   def copyright_generator
     ClingmanViewTool::Renderer.copyright 'Deven Clingman', 'All rights reserved'
   end
+
+  def image_generator(height:, width:)
+    "http://placehold.it/#{height}X#{width}"
+  end
+
+  
 end
 
 

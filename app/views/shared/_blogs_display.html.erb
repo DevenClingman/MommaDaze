@@ -7,7 +7,7 @@
           <span><%= blog.title %></span>
         </div>
         <div class="card-image">
-          <%= image_tag blog.thumb_image %>
+          <%= image_tag blog_img(blog.thumb_image, "thumb_image") %>
         </div>
         <div class="card-content">
           <%= blog.content.slice(0, 200) %>...
