@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   access all: [:show, :index, :destroy, :create, :new], site_admin: :all
 
   def index
-    @posts = Post.all
+    @posts = Post.order("created_at DESC").all
   end
 
   def show
