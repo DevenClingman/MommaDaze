@@ -1,3 +1,5 @@
+puts "start of seeds file"
+
 25.times do |blog|
   Blog.create!(
     title: "Blog #{blog}",
