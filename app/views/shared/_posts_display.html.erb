@@ -5,7 +5,7 @@
       <div class="col s5">
         <div class="card">
           <div class="card-image">
-            <%= image_tag posts[count].image %>
+            <%= image_tag portfolio_img(posts[count].image, "image") %>
             <span class="card-title"><%= posts.first.title %></span>
           </div>
           <div class="card-content">
@@ -26,7 +26,7 @@
       <div class="col s5">
         <div class="card">
           <div class="card-image">
-            <%= image_tag posts[count].image %>
+            <%= image_tag portfolio_img(posts[count].image, "image") %>
             <span class="card-title"><%= posts[count].title %></span>
           </div>
           <div class="card-content">
