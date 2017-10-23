@@ -5,5 +5,7 @@ class Blog < ApplicationRecord
   validates_presence_of :title, :content
 
   mount_uploader :thumb_image, BlogUploader
+
+  acts_as_taggable
 end
 
