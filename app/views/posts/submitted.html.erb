@@ -1,0 +1,11 @@
+<h1>Submitted Posts</h1>
+
+<% @submitted_posts.each do |posts| %>
+  
+    <div><%= posts.title %></div>
+    <div><%= posts.description %></div>
+    <div><%= posts.description %></div>
+    
+    <div><%= posts.status %>
+    <br><br><hr>
+<% end %>

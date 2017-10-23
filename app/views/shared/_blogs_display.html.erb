@@ -16,7 +16,8 @@
           <%= link_to "Keep Reading...", blog %>
         </div>
         <br><br>
-          <%= link_to "Edit Blog", edit_blog_path(blog) if logged_in?(:site_admin) %>
+          <%= link_to "Edit Blog", edit_blog_path(blog) if logged_in?(:site_admin) %><br>
+          <%= link_to blog.status, toggle_status_blog_path(blog.id) if logged_in?(:site_admin) %>
       </div>
     </div>
     <div class="col s2"></div>

@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :users_post?]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :users_post?, :toggle_status]
   access all: [:show, :index, :destroy, :create, :new], site_admin: :all
 
   def index
-    @posts = Post.order("created_at DESC").all
+    @posts = Post.order("created_at DESC").approved
   end
 
   def show
@@ -54,6 +54,17 @@ class PostsController < ApplicationController
       redirect_to posts_url, notice: 'Access Denied'
     end
   end 
+
+  def toggle_status
+    if @post.submitted?
+      @post.approved!
+    end
+    redirect_to blogs_url, notice: 'Post Approved.'
+  end
+
+  def submitted
+    @submitted_posts = Post.submitted
+  end
 
   private
 
