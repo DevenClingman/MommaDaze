@@ -7,6 +7,7 @@
       <li><%= link_to "Categories", posts_path %></li>
       <li><%= link_to "Blogs", blogs_path %></li>
       <li><%= link_to "About Me", about_path %></li>
+      <li><%= link_to "Submitted Posts", posts_submitted_path if logged_in?(:site_admin)%></li>
       <% if current_user.is_a?(GuestUser) %>
         <li><%= link_to "Login", user_session_path %></li>
         <li><%= link_to "Register", new_user_registration_path %></li>
