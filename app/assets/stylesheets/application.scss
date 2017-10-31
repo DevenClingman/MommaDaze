@@ -1,4 +1,6 @@
-@import "materialize";
+@import "materialize/components/color";
+@import 'materialize';
+@import "font-awesome";
 
 .header-title {
   text-align: center;
@@ -27,4 +29,8 @@ body{
   height: 255px;
   width: 1519px;
   margin: 0px;
+}
+
+textarea {
+  height: 40rem;
 }

@@ -12,17 +12,17 @@
   <% end %>
 
   <div class="">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :blog_title %>
+    <%= form.text_field :title, id: :blog_title, placeholder: "Title" %>
   </div>
 
   <div>
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :blog_content %>
+    <%= form.text_area :content, id: :blog_content, placeholder: "Content" %>
   </div>
     
-  <div class="">
-    <%= form.file_field :thumb_image %>
+  <div class="field">
+    <label class="waves-effect waves-light btn">
+      Upload Image <%= form.file_field :thumb_image, style: 'display:none;' %>
+    </label>
   </div>
 
   <div class="field">

@@ -1,11 +1,16 @@
-
-
 <div class="container">
   <div class="row">
-    <h1>New Blog</h1>
-    <div class = "col s12">
-      <%= render 'form', blog: @blog %>
-      <%= link_to 'Back', blogs_path %>
+    <div class="col s3"></div>
+    <div class="col s6">
+      <h1>Create a New Blog</h1>
+    </div>
+      
+    <div class="col s3"></div>
+    <div class="row">
+      <div class = "col s12">
+        <%= render 'form', blog: @blog %>
+        <%= link_to 'Back', blogs_path %>
+      </div>
     </div>
   </div>
 </div>
