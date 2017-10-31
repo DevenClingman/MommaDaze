@@ -8,6 +8,6 @@
     
     <div><%= post.status %>
       <%= link_to "Approve", toggle_status_post_path(post.id) if logged_in?(:site_admin) %>
-      <%= link_to "Deny", delete_submitted_post_path(post.id), method: :delete, data: { confirm: "Are you sure you waht to deny this post? It will be deleted if you continue."} if logged_in?(:site_admin) %>
+      <%= link_to "Deny", delete_submitted_post_path(post.id), method: :delete, data: { confirm: "Are you sure you want to deny this post? It will be deleted if you continue."} if logged_in?(:site_admin) %>
     <br><br><hr>
 <% end %>
