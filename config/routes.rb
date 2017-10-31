@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :posts do
     member do
       get :toggle_status
+      delete :delete_submitted
     end
   end
 
