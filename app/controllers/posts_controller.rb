@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :users_post?]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :users_post?, :toggle_status, :delete_submitted]
   access all: [:show, :index, :destroy, :create, :new], site_admin: :all
 
   def index
-    @posts = Post.order("created_at DESC").all
+    @posts = Post.order("created_at DESC").approved
   end
 
   def show
@@ -47,13 +47,32 @@ class PostsController < ApplicationController
     if is_admin? || users_post? 
       @post.destroy
       respond_to do |format|
-        format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+        format.html { redirect_to posts_url, notice: 'Post was successfully deleted.' }
         format.json { head :no_content }
       end
     else
       redirect_to posts_url, notice: 'Access Denied'
     end
   end 
+
+  def toggle_status
+    if @post.submitted?
+      @post.approved!
+    end
+    redirect_to blogs_url, notice: 'Post Approved.'
+  end
+
+  def submitted
+    @submitted_posts = Post.submitted
+  end
+
+  def delete_submitted
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to posts_submitted_url, notice: 'Post was successfully deleted.' }
+      format.json { head :no_content }
+    end
+  end
 
   private
 

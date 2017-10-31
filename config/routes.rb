@@ -5,8 +5,21 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'most_dazed', to: 'pages#mostdazed'
 
-  resources :posts
-  resources :blogs
+
+  match 'posts/submitted' => 'posts/submitted', :via => :get
+  resources :posts do
+    member do
+      get :toggle_status
+      delete :delete_submitted
+    end
+  end
+
+
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
 
   root to: 'posts#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
