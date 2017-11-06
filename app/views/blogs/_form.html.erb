@@ -27,10 +27,33 @@
 
   <div class="field">
     <%= form.label :tag_list %>
-    <%= form.text_field :tag_list %>
+    <%= form.text_field :tag_list, id: :text_field %>
   </div>
 
   <div class="waves-effect waves-light btn">
     <%= form.submit %>
   </div>
+<% end %>
+
+<%= form_with url: new_blog_path do |form|%>
+  <div>
+    <input type="checkbox" id="poop" class="filled-in" />
+    <label for="poop">Poop</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="mess" class="filled-in" />
+    <label for="mess">Mess</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="busted" class="filled-in" />
+    <label for="busted">Busted</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="uhoh" class="filled-in" />
+    <label for="uhoh">Uh-oh</label>
+  </div>
+
 <% end %>
