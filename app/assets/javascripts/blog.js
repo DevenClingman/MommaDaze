@@ -1,10 +1,22 @@
 $(document).on('turbolinks:load', function() {
   var tagList = [];
-  var listOfTags = [];
+
   var poop = document.getElementById("poop");
-  var mess = document.getElementById("mess");
-  var busted = document.getElementById("busted");
-  var uhoh = document.getElementById("uhoh");
+  var edible = document.getElementById("edible");
+  var inedible = document.getElementById("inedible");
+  var tantrums = document.getElementById("tantrums");
+  var tummyTroubles = document.getElementById("tummy_troubles");
+  var tasmanianDevils = document.getElementById("tasmanian_devils");
+  var mischiefMakers = document.getElementById("mischief_makers");
+  var eyeRolls = document.getElementById("eye_rolls");
+  var littleArtists = document.getElementById("little_artists");
+  var ouch = document.getElementById("ouch");
+  var growingPains = document.getElementById("growing_pains");
+  var brokenUhoh = document.getElementById("broken_uhoh");
+  var worthwhilePerks = document.getElementById("worthwhile_perks");
+  var pottyTraining = document.getElementById("potty_training");
+  var kidWins = document.getElementById("kid_wins");
+  var tryAgainTomorrow = document.getElementById("try_again_tomorrow");
 
   var text_field = document.getElementById("text_field");
 
@@ -25,10 +37,19 @@ $(document).on('turbolinks:load', function() {
 }
 
   updateArray(poop, "Poop", tagList);
-  updateArray(mess, "Mess", tagList);
-  updateArray(busted, "Busted", tagList);
-  updateArray(uhoh, "Uhoh", tagList);
-
-
+  updateArray(edible, "Edible", tagList);
+  updateArray(inedible, "Inedible", tagList);
+  updateArray(tantrums, "Tantrums", tagList);
+  updateArray(tummyTroubles, "Tummy Troubles", tagList);
+  updateArray(tasmanianDevils, "Tasmanian Devils", tagList);
+  updateArray(mischiefMakers, "Mischief Makers", tagList);
+  updateArray(eyeRolls, "Eye Rolls", tagList);
+  updateArray(littleArtists, "Little Artists", tagList);
+  updateArray(growingPains, "Growing Pains", tagList);
+  updateArray(brokenUhoh, "Broken -Uhoh", tagList);
+  updateArray(worthwhilePerks, "Worthwhile Perks", tagList);
+  updateArray(pottyTraining, "Potty Training", tagList);
+  updateArray(kidWins, "Kid Wins", tagList);
+  updateArray(tryAgainTomorrow, "Try Again Tomorrow", tagList);
 
 });
