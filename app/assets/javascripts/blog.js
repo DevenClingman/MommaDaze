@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).on('turbolinks:load', function() {
   var tagList = [];
   var listOfTags = [];
   var poop = document.getElementById("poop");
