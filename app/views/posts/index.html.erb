@@ -1,7 +1,2 @@
-
-<div class="container">
-  <%= link_to "New", new_post_path unless current_user.is_a?(GuestUser)%>
-  <!-- Begin of loop -->
-  <%= render 'shared/posts_display', posts: @posts %>  
-   <!-- End of loop -->
-</div>
+<%= link_to "New", new_post_path unless current_user.is_a?(GuestUser)%>
+<%= render 'shared/posts_display', posts: @posts %>  

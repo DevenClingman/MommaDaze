@@ -1,21 +1,22 @@
 <nav>
   <div class="nav-wrapper green ">
-    
-
-    <%= link_to fa_icon('home'), root_path, :style=>'font-size: 32px;' %>
-
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><%= link_to "Most Dazed", most_dazed_path %></li>
-      <li><%= link_to "Categories", posts_path %></li>
-      <li><%= link_to "Blogs", blogs_path %></li>
-      <li><%= link_to "About Me", about_path %></li>
-      <li><%= link_to "Submitted Posts", posts_submitted_path if logged_in?(:site_admin)%></li>
-      <% if current_user.is_a?(GuestUser) %>
-        <li><%= link_to "Login", user_session_path %></li>
-        <li><%= link_to "Register", new_user_registration_path %></li>
-      <% else %>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-      <% end %>
-    </ul>
+    <div class="container">
+      <%= link_to fa_icon('home'), root_path, :style=>'font-size: 32px;' %>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><%= link_to "Most Dazed", most_dazed_path %></li>
+        <li><%= link_to "Categories", posts_path %></li>
+        <li><%= link_to "Blogs", blogs_path %></li>
+        <li><%= link_to "About Me", about_path %></li>
+        <li><%= link_to "Submitted Posts", posts_submitted_path if logged_in?(:site_admin)%></li>
+        <% if current_user.is_a?(GuestUser) %>
+          <li><%= link_to "Login", user_session_path %></li>
+          <li><%= link_to "Register", new_user_registration_path %></li>
+        <% else %>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </nav>
+
+

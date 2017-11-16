@@ -1,46 +1,24 @@
-<% count = 0 %>
-  <% while count < posts.length %>
-    <div class="row">
-      <div class="col s1"></div>
-      <div class="col s5">
-        <div class="card">
-          <div class="card-image">
-            <%= image_tag portfolio_img(posts[count].image, "image") %>
-            <span class="card-title"><%= posts.first.title %></span>
-          </div>
-          <div class="card-content">
-            <div>
-              Shared by <%= posts[count].user.name %>
-              <br><br>
-            </div>
-              <%= posts[count].description.slice(0, 200) %>
-          </div>
-          <div class="card-action">
-            <%= link_to 'View Post', posts[count] %>
-          </div>
+<% posts.each do |post| %>
+  <div class="row">
+    <div class="col s3"></div>
+    <div class="col s6">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag portfolio_img(post.image, "image") %>
+          <span class="card-title"><%= post.title %></span>
         </div>
-      </div>
-      <% count += 1 %>
-      <% break if count >= posts.length %>
-      <div class="col s1"></div>
-      <div class="col s5">
-        <div class="card">
-          <div class="card-image">
-            <%= image_tag portfolio_img(posts[count].image, "image") %>
-            <span class="card-title"><%= posts[count].title %></span>
+        <div class="card-content">
+          <div>
+            Shared by <%= post.user.name %>
+            <br><br>
           </div>
-          <div class="card-content">
-            <div>
-              Shared by <%= posts[count].user.name %>
-              <br><br>
-            </div>
-              <%= posts[count].description.slice(0, 200) %>
-          </div>
-          <div class="card-action">
-            <%= link_to 'View Post', posts[count] %>
-          </div>
+          <%= post.description.slice(0, 200) %>
         </div>
+        <div class="card-action">
+          <%= link_to "View Post", post %>
+        </div>
+        <div class="col s3"></div>
       </div>
     </div>
-    <% count += 1 %>
-   <% end %>
+  </div>
+<% end %>

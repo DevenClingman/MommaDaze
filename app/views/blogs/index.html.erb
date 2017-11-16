@@ -1,6 +1,4 @@
-<div class="container">
   <h1 class="header-title">Blogs</h1>
   <h5 class="header-title"><%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %></h5>
   <p id="notice"><%= notice %></p>
   <%= render 'shared/blogs_display', blog: @blogs %>
-</div> 
