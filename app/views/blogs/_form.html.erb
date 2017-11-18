@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="">
+  <div class="field">
     <%= form.text_field :title, id: :blog_title, placeholder: "Title" %>
   </div>
 
@@ -37,97 +37,4 @@
   </div>
 <% end %>
 
-<br>
-<br>
-
-<%= form_with url: new_blog_path do |form|%>
-  <div class="row">
-    <div class="col s3">
-      <div>
-        <input type="checkbox" id="poop" class="filled-in" />
-        <label for="poop">Poop</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="edible" class="filled-in" />
-        <label for="edible">Edible</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="inedible" class="filled-in" />
-        <label for="inedible">Inedible</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="tantrums" class="filled-in" />
-        <label for="tantrums">Tantrums</label>
-      </div>
-    </div>
-
-    <div class="col s3">
-      <div>
-        <input type="checkbox" id="tummy_troubles" class="filled-in" />
-        <label for="tummy_troubles">Tummy Troubles</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="tasmanian_devils" class="filled-in" />
-        <label for="tasmanian_devils">Tasmanian Devils</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="mischief_makers" class="filled-in" />
-        <label for="mischief_makers">Mischief Makers</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="eye_rolls" class="filled-in" />
-        <label for="eye_rolls">Eye Rolls</label>
-      </div>
-    </div>
-
-    <div class="col s3">
-      <div>
-        <input type="checkbox" id="little_artists" class="filled-in" />
-        <label for="little_artists">Little Artists</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="ouch" class="filled-in" />
-        <label for="ouch">Ouch</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="growing_pains" class="filled-in" />
-        <label for="growing_pains">Growing Pains</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="broken_uhoh" class="filled-in" />
-        <label for="broken_uhoh">Broken - Uhoh</label>
-      </div>
-    </div>
-
-    <div class="col s3">
-      <div>
-        <input type="checkbox" id="worthwhile_perks" class="filled-in" />
-        <label for="worthwhile_perks">Worthwhile Perks</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="potty_training" class="filled-in" />
-        <label for="potty_training">Potty Training</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="kid_wins" class="filled-in" />
-        <label for="kid_wins">Kid Wins</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="try_again_tomorrow" class="filled-in" />
-        <label for="try_again_tomorrow">Try Again Tomorrow</label>
-      </div>
-    </div>
-  </div>
-<% end %>
+<%= render 'shared/tag_checkbox' %>
