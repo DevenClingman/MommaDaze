@@ -12,7 +12,8 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require blog
-//= require turbolinks
 //= require materialize-sprockets
+//= require blog
+//= require post
+//= require turbolinks
 //= require_tree .

@@ -1,4 +1,14 @@
 $(document).on('turbolinks:load', function() {
+  
+  //modal
+
+  $('#checkbox-category').hide();
+
+  $('#category').click(function() {
+    $('#checkbox-category').slideToggle(1500);
+  });
+
+  //checkbox
   var tagList = [];
 
   var poop = document.getElementById("poop");
@@ -51,5 +61,15 @@ $(document).on('turbolinks:load', function() {
   updateArray(pottyTraining, "Potty Training", tagList);
   updateArray(kidWins, "Kid Wins", tagList);
   updateArray(tryAgainTomorrow, "Try Again Tomorrow", tagList);
+
+
+
+
+
+
+
+
+
+
 
 });

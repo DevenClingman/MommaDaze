@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'most_dazed', to: 'pages#mostdazed'
 
-
   match 'posts/submitted' => 'posts/submitted', :via => :get
   resources :posts do
     member do
@@ -13,7 +12,6 @@ Rails.application.routes.draw do
       delete :delete_submitted
     end
   end
-
 
   resources :blogs do
     member do

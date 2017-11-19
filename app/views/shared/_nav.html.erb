@@ -4,7 +4,7 @@
       <%= link_to fa_icon('home'), root_path, :style=>'font-size: 32px;' %>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><%= link_to "Most Dazed", most_dazed_path %></li>
-        <li><%= link_to "Categories", posts_path %></li>
+        <li id="category">Categories</li>
         <li><%= link_to "Blogs", blogs_path %></li>
         <li><%= link_to "About Me", about_path %></li>
         <li><%= link_to "Submitted Posts", posts_submitted_path if logged_in?(:site_admin)%></li>
@@ -18,5 +18,8 @@
     </div>
   </div>
 </nav>
+<%= render 'shared/category' %>
+
+
 
 
