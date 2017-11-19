@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function() {
   $('#checkbox-category').hide();
 
   $('#category').click(function() {
-    $('#checkbox-category').slideToggle(1500);
+    $('#checkbox-category').slideToggle(500);
   });
 
   //checkbox
