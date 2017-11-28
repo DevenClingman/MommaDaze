@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     end
   end
 
+  match 'blogs/search' => 'blogs#search', :via => :get
+
   resources :blogs do
     member do
       get :toggle_status

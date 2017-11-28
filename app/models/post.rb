@@ -10,5 +10,6 @@ class Post < ApplicationRecord
   mount_uploader :image, PostUploader
 
   acts_as_taggable
+
 end
 
