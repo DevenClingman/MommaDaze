@@ -28,7 +28,7 @@ class BlogsController < ApplicationController
 
   def search
     searched(params)
-    @blogs = Blog.searched_blogs(@tags)
+    @blogs = Blog.searched(@tags)
   end
 
   # POST /blogs

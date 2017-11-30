@@ -5,20 +5,13 @@ class Blog < ApplicationRecord
 
   validates_presence_of :title, :content
 
+
   mount_uploader :thumb_image, BlogUploader
 
   acts_as_taggable
 
-  def self.searched_blogs (arr)
-    selected = [];
-    Blog.all.each do |blog|
-      blog.tags.each do|tag|
-        if arr.include?(tag.name)
-          selected << blog
-        end
-      end
-    end
-    selected
+  def self.searched (arr)
+    Blog.tagged_with(arr)
   end
 end
 
