@@ -11,5 +11,9 @@ class Post < ApplicationRecord
 
   acts_as_taggable
 
+  def self.searched (arr)
+    Post.tagged_with(arr)
+  end
+
 end
 

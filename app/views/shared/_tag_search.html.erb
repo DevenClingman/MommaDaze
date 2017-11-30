@@ -1,5 +1,5 @@
 <% tag_items %>
-<form action="blogs/search" method="get">
+<form action=<%= "#{path}/search" %> method="get">
   <% @tag_items.each_pair do |id, value| %>
     <div>
       <input type="checkbox" id=<%= id %> name= <%= id %> value= <%= value %> class="filled-in" />

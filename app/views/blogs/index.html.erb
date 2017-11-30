@@ -1,4 +1,4 @@
-  <%= render 'shared/tag_search' %>
+  <%= render 'shared/tag_search', path: "blogs" %>
 
   <h1 class="header-title">Blogs</h1>
   <h5 class="header-title"><%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %></h5>
