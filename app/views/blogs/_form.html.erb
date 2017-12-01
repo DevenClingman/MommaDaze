@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="">
+  <div class="field">
     <%= form.text_field :title, id: :blog_title, placeholder: "Title" %>
   </div>
 
@@ -25,12 +25,16 @@
     </label>
   </div>
 
-  <div class="field">
+  <div class="field hidden">
     <%= form.label :tag_list %>
-    <%= form.text_field :tag_list %>
+    <%= form.text_field :tag_list, id: :text_field %>
   </div>
+
+  <br><br>
 
   <div class="waves-effect waves-light btn">
     <%= form.submit %>
   </div>
 <% end %>
+
+<%= render 'shared/tag_checkbox' %>

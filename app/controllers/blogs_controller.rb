@@ -26,6 +26,11 @@ class BlogsController < ApplicationController
   def edit
   end
 
+  def search
+    searched(params)
+    @blogs = Blog.searched(@tags)
+  end
+
   # POST /blogs
   # POST /blogs.json
   def create

@@ -10,5 +10,10 @@ class Post < ApplicationRecord
   mount_uploader :image, PostUploader
 
   acts_as_taggable
+
+  def self.searched (arr)
+    Post.tagged_with(arr)
+  end
+
 end
 

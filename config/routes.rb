@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'most_dazed', to: 'pages#mostdazed'
 
-
+  match 'posts/search' => 'posts#search', :via => :get
   match 'posts/submitted' => 'posts/submitted', :via => :get
+  
   resources :posts do
     member do
       get :toggle_status
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
     end
   end
 
+  match 'blogs/search' => 'blogs#search', :via => :get
 
   resources :blogs do
     member do

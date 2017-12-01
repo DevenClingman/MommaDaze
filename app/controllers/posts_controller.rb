@@ -31,6 +31,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    searched(params)
+    @posts = Post.searched(@tags)
+  end
+
   def update
     respond_to do |format|
       if @post.update(post_params)

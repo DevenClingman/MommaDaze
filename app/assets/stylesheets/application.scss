@@ -34,3 +34,14 @@ body{
 textarea {
   height: 40rem;
 }
+
+.hidden {
+  display: none;
+}
+
+#category:hover {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+
