@@ -1,11 +1,11 @@
 $(document).on('turbolinks:load', function() {
   
-  //modal
+  //category
 
   $('#checkbox-category').hide();
 
-  $('#category').click(function() {
-    $('#checkbox-category').slideToggle(500);
+  $('.category-button').click(function() {
+    $('.tag-search').slideToggle(500);
   });
 
   //checkbox
